@@ -38,6 +38,20 @@ function displayBook(library) {
         pages.className = 'pagesText';
         pages.textContent = `Pages: ${library[i].pages}`;
         div.appendChild(pages);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.className = 'deleteBtn';
+        div.appendChild(deleteBtn);
+
+
+        deleteBtn.addEventListener('click', () => {
+            const index = myLibrary.indexOf(library[i]);
+            if(index !== -1) {
+                myLibrary.splice(index, 1);
+                div.remove();
+            }
+        });
     }
 }
 
