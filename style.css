@@ -75,7 +75,7 @@ button {
 .card {
     background-color: white;
     border-radius: 10px;
-    height: 200px;
+    height: 300px;
     margin: 15px 0;
     margin-left: 20px;
     display: flex;
@@ -86,14 +86,25 @@ button {
     box-shadow: 10px 10px black;
 }
 
-.deleteBtn {
-    background-color: #e63946;
+.readStatusBtn.read {
+    background-color: #34d399;
+}
+
+.readStatusBtn.notRead {
+    background-color: #f87171;
+}
+
+.deleteBtn, .readStatusBtn {
     color: white;
     border: none;
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.deleteBtn {
+    background-color: #d62828;
 }
 
 .deleteBtn:hover {
