@@ -68,12 +68,14 @@ class Book {
         const bookElement = this.createBookElement();
         bookList.appendChild(bookElement);
     }
+
+    static addBookToLibrary(bookTitle, bookAuthor, bookPages, haveRead) {
+        const newBook = new Book(bookTitle, bookAuthor, bookPages, haveRead);
+        newBook.addToLibrary();
+    }
 }
 
-function addBookToLibrary(bookTitle, bookAuthor, bookPages, haveRead) {
-    const newBook = new Book(bookTitle, bookAuthor, bookPages, haveRead);
-    newBook.addToLibrary();
-}
+
 
 // function displayBook(library) {
 //     for (let i = 0; i < library.length; i++) {
@@ -148,7 +150,7 @@ bookForm.onsubmit = function(event) {
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
     const haveRead = document.getElementById('haveRead').checked;
-    addBookToLibrary(title, author, pages, haveRead);
+    Book.addBookToLibrary(title, author, pages, haveRead);
     bookForm.reset();
     bookModal.style.display = 'none';
 }
